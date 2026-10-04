@@ -1,23 +1,17 @@
-import './Header.css';
+import { Link } from "react-router-dom";
 
-export default function Header({ storeName, cartCount }) {
+function Header({ storeName, cartCount }) {
   return (
-    <header className="header">
-      <h1 className="store-name">{storeName}</h1>
+    <header style={{ padding: "20px" }}>
+      <h1>{storeName}</h1>
 
-      <nav>
-        <ul className="nav-links">
-          <li>Home</li>
-          <li>Products</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+      <nav style={{ display: "flex", gap: "20px" }}>
+        <Link to="/">Home</Link>
+        <Link to="/products">Shop</Link>
+        <Link to="/cart">Cart ({cartCount})</Link>
       </nav>
-
-      <div className="cart-container">
-        <span className="cart-icon">🛒</span>
-        <span className="cart-count">{cartCount}</span>
-      </div>
     </header>
   );
 }
+
+export default Header;
