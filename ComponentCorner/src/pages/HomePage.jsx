@@ -1,9 +1,12 @@
 import Hero from "../components/Hero";
 import BannerImage from "../assets/ComponentsBanner.png";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 
 function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
       <Hero
@@ -11,6 +14,7 @@ function HomePage() {
         subtitle="High‑quality components for every build"
         ctaText="Shop Now"
         image={BannerImage}
+        onCtaClick={() => navigate("/products")}
       />
 
       <div className="home-intro">
