@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import CartPage from "./pages/CartPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage"; 
 
 import products from "./data/products";
 
@@ -30,6 +31,10 @@ function App() {
         <Route
           path="/products"
           element={<ProductsPage products={products} addToCart={addToCart} />}
+        />
+        <Route 
+          path="/product-details" 
+          element={<ProductDetailsPage />} 
         />
         <Route
           path="/cart"
